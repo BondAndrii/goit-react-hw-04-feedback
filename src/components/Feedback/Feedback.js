@@ -33,8 +33,12 @@ class Feedback extends Component {
     countTotalFeedback() {
         return ( this.state.good + this.state.neutral +this.state.bad)
     }
-        
-    
+    countPositiveFeedbackPercentage() {
+        return Math.round((this.state.good / this.countTotalFeedback()) * 100);
+    }   
+    countNormalFeedbackPercentage() {
+        return Math.round((this.state.neutral / this.countTotalFeedback()) * 100);
+    }  
     render() {
     return (
         <div>
@@ -45,13 +49,19 @@ class Feedback extends Component {
                 <button type="button" onClick={this.answerNeutral}>Норм</button>
                 <button type="button" onClick={this.answerBad}>Відстій</button>
             </ul>
-            <h2>{this.countTotalFeedback()} людей нам кажуть {this.state.good} разів супер, {this.state.neutral} разів норм, {this.state.bad} разів відстій</h2>
-            <ul>
+            <p>{this.countTotalFeedback()} людей нам кажуть {this.state.good} разів супер, {this.state.neutral} разів норм, {this.state.bad} разів відстій. {this.countPositiveFeedbackPercentage() > 0 && (<span> Тож високу оцінку нам дали {this.countPositiveFeedbackPercentage()} % опитаних</span> )}. {this.countNormalFeedbackPercentage() > 0 && (<span> Залишились задоволеними {this.countNormalFeedbackPercentage()} % опитаних</span> )}  </p>
+            {/* <ul>
                 <p>{this.state.good} разів супер</p>
                 <p>{this.state.neutral} разів норм</p>
                 <p>{this.state.bad} разів відстій</p>
-                {/* <p>{this.countTotalFeedback()}</p> */}
-            </ul>
+                
+                {this.countTotalFeedback() > 0 && (
+                <p>{this.countTotalFeedback()} разів дали відгук</p>
+                )}
+                {this.countTotalFeedback() > 0 && (
+                <p>позитивний {this.countPositiveFeedbackPercentage()} %</p>
+                )}
+            </ul> */}
         </div>
     );
     }; 

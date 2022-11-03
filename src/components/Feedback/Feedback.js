@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Statistics from "./Statistics";
+import FeedbackOptions from "./FeedbackOptions";
 
 
 class Feedback extends Component {    
@@ -44,12 +46,14 @@ class Feedback extends Component {
         <div>
             <h1>Реакція на наші послуги</h1>
             <p>*будь-ласка, залиште відгук, натиснувши на вибрану кнопку</p>
-            <ul>
+            <FeedbackOptions/>
+            {/* <ul>
                 <button type="button" onClick={this.answerGood}>Супер</button>
                 <button type="button" onClick={this.answerNeutral}>Норм</button>
                 <button type="button" onClick={this.answerBad}>Відстій</button>
-            </ul>
+            </ul> */}
             <b>{this.countTotalFeedback()} людей нам кажуть {this.state.good} разів супер, {this.state.neutral} разів норм, {this.state.bad} разів відстій. {this.countPositiveFeedbackPercentage() > 0 && (<span> Тож високу оцінку нам дали {this.countPositiveFeedbackPercentage()} % опитаних</span> )}. {this.countNormalFeedbackPercentage() > 0 && (<span> Залишились задоволеними {this.countNormalFeedbackPercentage()} % опитаних</span> )}  </b>
+            <Statistics/>
             {/* <ul>
                 <p>{this.state.good} разів супер</p>
                 <p>{this.state.neutral} разів норм</p>

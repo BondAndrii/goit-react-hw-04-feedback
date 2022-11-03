@@ -1,6 +1,6 @@
 import React from "react";
 
-const FeedbackOptions = ({}) => (
+const FeedbackOptions = () => (
     <ul>
         <button type="button" onClick={this.answerGood}>Супер</button>
         <button type="button" onClick={this.answerNeutral}>Норм</button>

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Statistics from "./Statistics";
 import FeedbackOptions from "./FeedbackOptions";
+import Section from "./Section";
 
 
 class Feedback extends Component {    
@@ -44,26 +45,39 @@ class Feedback extends Component {
     render() {
     return (
         <div>
-            <h1>Реакція на наші послуги</h1>
-            <p>*будь-ласка, залиште відгук, натиснувши на вибрану кнопку</p>
+            <Section
+                title={"Реакція на наші послуги"}
+                trailer={"*будь-ласка, залиште відгук, натиснувши на вибрану кнопку"}
+            >
+            {/* <h1>Реакція на наші послуги</h1>
+            <p>*будь-ласка, залиште відгук, натиснувши на вибрану кнопку</p> */}
             <FeedbackOptions
                 onGood={this.answerGood}
                 onNeutral={this.answerNeutral}
                 onBad={this.answerBad}            
-            />
+                />
+            </Section>
             {/* <ul>
                 <button type="button" onClick={this.answerGood}>Супер</button>
                 <button type="button" onClick={this.answerNeutral}>Норм</button>
                 <button type="button" onClick={this.answerBad}>Відстій</button>
             </ul> */}
             {/* <b>{this.countTotalFeedback()} людей нам кажуть {this.state.good} разів супер, {this.state.neutral} разів норм, {this.state.bad} разів відстій. {this.countPositiveFeedbackPercentage() > 0 && (<span> Тож високу оцінку нам дали {this.countPositiveFeedbackPercentage()} % опитаних</span> )}. {this.countNormalFeedbackPercentage() > 0 && (<span> Залишились задоволеними {this.countNormalFeedbackPercentage()} % опитаних</span> )}  </b> */}
+            <Section
+                title={"Результат опитування"}
+            
+            >
+            {/* <b>{this.countTotalFeedback()} людей нам кажуть {this.state.good} разів супер, {this.state.neutral} разів норм, {this.state.bad} разів відстій. {this.countPositiveFeedbackPercentage() > 0 && (<span> Тож високу оцінку нам дали {this.countPositiveFeedbackPercentage()} % опитаних</span> )}. {this.countNormalFeedbackPercentage() > 0 && (<span> Залишились задоволеними {this.countNormalFeedbackPercentage()} % опитаних</span> )}  </b> */}
+ 
             <Statistics 
                     good={this.state.good}
                     neutral={this.state.neutral}
                     bad={this.state.bad}
                     total={this.countTotalFeedback()}
                     positivePercentage={this.countPositiveFeedbackPercentage()}
-                    />
+                    neutralPercentage={this.countNormalFeedbackPercentage()}                    
+                />
+            </Section>
             {/* <ul>
                 <p>{this.state.good} разів супер</p>
                 <p>{this.state.neutral} разів норм</p>

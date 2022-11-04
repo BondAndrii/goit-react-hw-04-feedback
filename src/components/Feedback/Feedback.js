@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Statistics from "./Statistics";
 import FeedbackOptions from "./FeedbackOptions";
 import Section from "./Section";
+import Notification from "./Notification";
+
 
 
 class Feedback extends Component {    
@@ -69,14 +71,14 @@ class Feedback extends Component {
             >
             {/* <b>{this.countTotalFeedback()} людей нам кажуть {this.state.good} разів супер, {this.state.neutral} разів норм, {this.state.bad} разів відстій. {this.countPositiveFeedbackPercentage() > 0 && (<span> Тож високу оцінку нам дали {this.countPositiveFeedbackPercentage()} % опитаних</span> )}. {this.countNormalFeedbackPercentage() > 0 && (<span> Залишились задоволеними {this.countNormalFeedbackPercentage()} % опитаних</span> )}  </b> */}
  
-            <Statistics 
+                {this.countTotalFeedback() > 0 ? <Statistics
                     good={this.state.good}
                     neutral={this.state.neutral}
                     bad={this.state.bad}
                     total={this.countTotalFeedback()}
                     positivePercentage={this.countPositiveFeedbackPercentage()}
-                    neutralPercentage={this.countNormalFeedbackPercentage()}                    
-                />
+                    neutralPercentage={this.countNormalFeedbackPercentage()}
+                />: <Notification massage={"Твій відгук стане першим"}/> }
             </Section>
             {/* <ul>
                 <p>{this.state.good} разів супер</p>

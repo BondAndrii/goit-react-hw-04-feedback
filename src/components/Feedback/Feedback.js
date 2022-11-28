@@ -13,36 +13,52 @@ class Feedback extends Component {
         bad: 0,        
     }
     
-    
-    answerGood = () => {
+    options = Object.keys(this.state); // keys of state
+    // name = ['Супер', "Норм", "Відстій"];
+   name = {
+        good: 'Супер',
+        neutral:"Норм",
+        bad: "Відстій",
+    }
+    // answerGood = () => {
+    //     this.setState(prevState => {
+    //         return {
+    //             good: prevState.good + 1,                
+    //         }
+    //     })
+    // }
+    // answerNeutral = () => {
+    //     this.setState(prevState => {
+    //         return {
+    //             neutral: prevState.neutral + 1,                
+    //         }
+    //     })
+    // }
+    // answerBad = () => {
+    // this.setState(prevState => {
+    //     return {
+    //         bad: prevState.bad + 1,
+    //         }
+    //     })
+    // }
+    answer = (button) => {
         this.setState(prevState => {
             return {
-                good: prevState.good + 1,                
-            }
-        })
-    }
-    answerNeutral = () => {
-        this.setState(prevState => {
-            return {
-                neutral: prevState.neutral + 1,                
-            }
-        })
-    }
-    answerBad = () => {
-    this.setState(prevState => {
-        return {
-            bad: prevState.bad + 1,
+                [button]: prevState[button] + 1,
             }
         })
     }
     countTotalFeedback() {
-        return ( this.state.good + this.state.neutral +this.state.bad)
+        const { good, neutral, bad } = this.state;
+        return ( good + neutral + bad)
     }
     countPositiveFeedbackPercentage() {
-        return Math.round((this.state.good / this.countTotalFeedback()) * 100);
+        const { good } = this.state;
+        return Math.round((good / this.countTotalFeedback()) * 100);
     }   
     countNormalFeedbackPercentage() {
-        return Math.round((this.state.neutral / this.countTotalFeedback()) * 100);
+        const { neutral} = this.state;
+        return Math.round((neutral / this.countTotalFeedback()) * 100);
     }  
     render() {
     return (
@@ -54,9 +70,13 @@ class Feedback extends Component {
             {/* <h1>Реакція на наші послуги</h1>
             <p>*будь-ласка, залиште відгук, натиснувши на вибрану кнопку</p> */}
             <FeedbackOptions
-                onGood={this.answerGood}
-                onNeutral={this.answerNeutral}
-                onBad={this.answerBad}            
+                // onGood={this.answerGood}
+                // onNeutral={this.answerNeutral}
+                // onBad={this.answerBad}   
+                    options={this.options}
+                    answer={this.answer}
+                    name = {this.name}
+                    
                 />
             </Section>
             {/* <ul>
@@ -70,7 +90,7 @@ class Feedback extends Component {
             
             >
             {/* <b>{this.countTotalFeedback()} людей нам кажуть {this.state.good} разів супер, {this.state.neutral} разів норм, {this.state.bad} разів відстій. {this.countPositiveFeedbackPercentage() > 0 && (<span> Тож високу оцінку нам дали {this.countPositiveFeedbackPercentage()} % опитаних</span> )}. {this.countNormalFeedbackPercentage() > 0 && (<span> Залишились задоволеними {this.countNormalFeedbackPercentage()} % опитаних</span> )}  </b> */}
- 
+                
                 {this.countTotalFeedback() > 0 ? <Statistics
                     good={this.state.good}
                     neutral={this.state.neutral}

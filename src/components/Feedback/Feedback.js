@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./Feedback.css";
 import Statistics from "./Statistics";
 import FeedbackOptions from "./FeedbackOptions";
 import Section from "./Section";
@@ -62,7 +63,7 @@ class Feedback extends Component {
     }  
     render() {
     return (
-        <div>
+        <div className="Feedback">
             <Section
                 title={"Реакція на наші послуги"}
                 trailer={"*будь-ласка, залиште відгук, натиснувши на вибрану кнопку"}

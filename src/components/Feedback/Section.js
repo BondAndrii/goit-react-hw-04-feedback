@@ -12,3 +12,9 @@ Section.propTypes = {
     children: PropTypes.node.isRequired
 };
 export default Section;
+
+Section.propTypes = {
+    title: PropTypes.string,
+    trailer: PropTypes.string,
+    children: PropTypes.node,
+}

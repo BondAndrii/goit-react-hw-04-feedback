@@ -11,5 +11,5 @@ function Notification({ massage }) {
 export default Notification;
 
 Notification.propTypes = {
-    massage: PropTypes.string
+    massage: PropTypes.string.isRequired,
 }

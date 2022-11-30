@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from 'prop-types'
+import "./Section.css"
 function Section({ title, trailer, children }) {
-    return <section>
-        <h2>{title}</h2>
-        <p>{trailer}</p>
+    return <section className="Section">
+        <h2 className="Tittle">{title}</h2>
+        <p className="Trailer">{trailer}</p>
         {children}
         </section>
 };

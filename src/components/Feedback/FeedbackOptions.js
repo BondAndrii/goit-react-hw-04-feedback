@@ -21,5 +21,5 @@ export default FeedbackOptions;
 FeedbackOptions.propTypes = {
     options: PropTypes.array.isRequired,
     answer: PropTypes.func.isRequired,
-    name: PropTypes.array.isRequired,
+    name: PropTypes.object.isRequired,
 }

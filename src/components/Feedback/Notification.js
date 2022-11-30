@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from 'prop-types'
 
 function Notification({ massage }) {
-    return <p>
+    return <p className="Trailer">
         {massage}
     </p>
 };

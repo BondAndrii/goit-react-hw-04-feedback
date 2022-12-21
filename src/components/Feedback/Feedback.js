@@ -12,37 +12,37 @@ export default function Feedback() {
     const [bad, setBad] = useState(0);
 
     
-    const options = [good, neutral, bad]
+    const options = ['good', 'neutral', 'bad']
 
-    // const name = {
-    //     good: 'Супер',
-    //     neutral: "Норм",
-    //     bad: "Відстій",
-    // };
-    // const getAnswer = (key) => {
-    //     switch (key) {
-    //         case "good":
-    //             setGood(prevState => prevState + 1);
-    //             break;
-    //         case "neutral":
-    //             setNeutral(prevState => prevState + 1);
-    //             break;
-    //         case "bad":
-    //             setBad(prevState => prevState + 1);
-    //             break;
-    //         default:
-    //             console.log("Invalid subscription type");
-    //     }
+    const name = {
+        good: 'Супер',
+        neutral: "Норм",
+        bad: "Відстій",
+    };
+    const getAnswer = (button) => {
+        switch (button) {
+            case "good":
+                setGood(prevState => prevState + 1);
+                break;
+            case "neutral":
+                setNeutral(prevState => prevState + 1);
+                break;
+            case "bad":
+                setBad(prevState => prevState + 1);
+                break;
+            default:
+                return;
+        }
+    }
+    // const handleButtonGood = () => {
+    //     setGood(prevState => prevState + 1);
     // }
-    const handleButtonGood = () => {
-        setGood(prevState => prevState + 1);
-    }
-    const handleButtonNeutral = () => {
-        setNeutral(prevState => prevState + 1);
-    }
-    const handleButtonBad = () => {
-        setBad(prevState => prevState + 1);
-    }
+    // const handleButtonNeutral = () => {
+    //     setNeutral(prevState => prevState + 1);
+    // }
+    // const handleButtonBad = () => {
+    //     setBad(prevState => prevState + 1);
+    // }
     // answer = (button) => {
     //     this.setState(prevState => {
     //         return {
@@ -68,10 +68,11 @@ export default function Feedback() {
             >            
             <FeedbackOptions               
                     options={options}
-                    // onClick={getAnswer}
-                    clickGood={handleButtonGood}
-                    clickNeutral={handleButtonNeutral}
-                    clickBad={handleButtonBad}
+                    onClick={getAnswer}
+                    name={name}
+                    // clickGood={handleButtonGood}
+                    // clickNeutral={handleButtonNeutral}
+                    // clickBad={handleButtonBad}
                                      
             />
             </Section>            

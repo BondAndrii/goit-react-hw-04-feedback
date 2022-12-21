@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, {  useState } from "react";
 import "./Feedback.css";
 import Statistics from "../Statistics/Statistics";
 import FeedbackOptions from "../FeedbackOptions/FeedbackOptions";
@@ -12,14 +12,14 @@ export default function Feedback() {
     const [bad, setBad] = useState(0);
 
     
-    const options = {good, neutral, bad}
+    const options = [good, neutral, bad]
 
     // const name = {
     //     good: 'Супер',
     //     neutral: "Норм",
     //     bad: "Відстій",
     // };
-    // const getAnswer= (key) => {
+    // const getAnswer = (key) => {
     //     switch (key) {
     //         case "good":
     //             setGood(prevState => prevState + 1);
@@ -29,6 +29,9 @@ export default function Feedback() {
     //             break;
     //         case "bad":
     //             setBad(prevState => prevState + 1);
+    //             break;
+    //         default:
+    //             console.log("Invalid subscription type");
     //     }
     // }
     const handleButtonGood = () => {
@@ -65,6 +68,7 @@ export default function Feedback() {
             >            
             <FeedbackOptions               
                     options={options}
+                    // onClick={getAnswer}
                     clickGood={handleButtonGood}
                     clickNeutral={handleButtonNeutral}
                     clickBad={handleButtonBad}

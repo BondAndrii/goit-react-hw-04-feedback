@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import "./FeedbackOptions.css"
 const FeedbackOptions = ({ options, clickGood, clickNeutral, clickBad }) => {
     const { good, neutral, bad } = options;

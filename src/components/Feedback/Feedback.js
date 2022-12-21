@@ -92,6 +92,7 @@ export default function Feedback() {
         </div>
         );
 }
+/////////////CLASS////////////////CLASS///////////////CLASS/////////////
 // class Feedback extends Component {    
 //     state = {
 //         good: 0,

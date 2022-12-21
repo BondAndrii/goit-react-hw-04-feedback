@@ -5,7 +5,9 @@ const Statistics = ({good, neutral, bad, total, positivePercentage, neutralPerce
     <div>
         {total > 0 && (<ul>
         <p className="Trailer">{total} людей нам кажуть {good} разів супер, {neutral} разів норм, {bad} разів відстій.</p>
-        <p className="Trailer">{positivePercentage > 0 && (<span> Тож високу оцінку нам дали {positivePercentage} % опитаних.</span>)} {neutralPercentage > 0 && (<span> Залишились задоволеними {neutralPercentage} % опитаних.</span>)}</p>
+            <p className="Trailer">{positivePercentage > 0
+                && (<span> Тож високу оцінку нам дали {positivePercentage} % опитаних.</span>)} {neutralPercentage > 0
+                    && (<span> Залишились задоволеними {neutralPercentage} % опитаних.</span>)}</p>
 
     </ul>)}
     <ul>

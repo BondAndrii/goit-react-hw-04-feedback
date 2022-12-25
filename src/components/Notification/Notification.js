@@ -7,7 +7,6 @@ function Notification({ massage }) {
     </p>
 };
 
-// Notification.
 export default Notification;
 
 Notification.propTypes = {

@@ -34,22 +34,7 @@ export default function Feedback() {
                 return;
         }
     }
-    // const handleButtonGood = () => {
-    //     setGood(prevState => prevState + 1);
-    // }
-    // const handleButtonNeutral = () => {
-    //     setNeutral(prevState => prevState + 1);
-    // }
-    // const handleButtonBad = () => {
-    //     setBad(prevState => prevState + 1);
-    // }
-    // answer = (button) => {
-    //     this.setState(prevState => {
-    //         return {
-    //             [button]: prevState[button] + 1,
-    //         }
-    //     })
-    // };
+    
     const countTotalFeedback = () => {        
         return (good + neutral + bad);
     };
@@ -69,10 +54,7 @@ export default function Feedback() {
             <FeedbackOptions               
                     options={options}
                     onClick={getAnswer}
-                    name={name}
-                    // clickGood={handleButtonGood}
-                    // clickNeutral={handleButtonNeutral}
-                    // clickBad={handleButtonBad}
+                    name={name}                  
                                      
             />
             </Section>            
@@ -92,67 +74,3 @@ export default function Feedback() {
         </div>
         );
 }
-/////////////CLASS////////////////CLASS///////////////CLASS/////////////
-// class Feedback extends Component {    
-//     state = {
-//         good: 0,
-//         neutral: 0,
-//         bad: 0,        
-//     }
-    
-//     options = Object.keys(this.state); // keys of state
-//     // name = ['Супер', "Норм", "Відстій"];
-   
-//     answer = (button) => {
-//         this.setState(prevState => {
-//             return {
-//                 [button]: prevState[button] + 1,
-//             }
-//         })
-//     }
-//     countTotalFeedback() {
-//         const { good, neutral, bad } = this.state;
-//         return ( good + neutral + bad)
-//     }
-//     countPositiveFeedbackPercentage() {
-//         const { good } = this.state;
-//         return Math.round((good / this.countTotalFeedback()) * 100);
-//     }   
-//     countNormalFeedbackPercentage() {
-//         const { neutral} = this.state;
-//         return Math.round((neutral / this.countTotalFeedback()) * 100);
-//     } 
-    
-
-//     render() {
-//     return (
-//         <div className="Feedback">
-//             <Section
-//                 title={"Реакція на наші послуги"}
-//                 trailer={"*будь-ласка, залиште відгук, натиснувши на вибрану кнопку"}
-//             >            
-//             <FeedbackOptions               
-//                     options={this.options}
-//                     answer={this.answer}
-//                     name = {this.name}                    
-//             />
-//             </Section>            
-//             <Section
-//                 title={"Результат опитування"}
-            
-//             >          
-//                 {this.countTotalFeedback() > 0 ? <Statistics
-//                     good={this.state.good}
-//                     neutral={this.state.neutral}
-//                     bad={this.state.bad}
-//                     total={this.countTotalFeedback()}
-//                     positivePercentage={this.countPositiveFeedbackPercentage()}
-//                     neutralPercentage={this.countNormalFeedbackPercentage()}
-//                 />: <Notification massage={"Твій відгук стане першим"}/> }
-//             </Section>            
-//         </div>
-//         );
-//     }; 
-// };
-    
-// export default Feedback;

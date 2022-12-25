@@ -14,38 +14,7 @@ const FeedbackOptions = ({ options, onClick, name }) => {
             ))}
         </ul>
     )
-    // const { good, neutral, bad } = options;
-    // return (
-    // <ul className="ButtonPlace">
-    //     <li>
-    //         <button
-    //         key={good}
-    //         type="button"
-    //         className="ButtonOption"
-    //         onClick={() => clickGood()}
-    //     >Good</button>
-    //     </li>
-    //     <li>
-    //         <button
-    //         key={neutral}
-    //         type="button"
-    //         className="ButtonOption"
-    //         onClick={() => clickNeutral()}
-    //     >Neutral</button>
-
-    //     </li>
-    //     <li>
-    //         <button
-    //         key={bad}
-    //         type="button"
-    //         className="ButtonOption"
-    //         onClick={() => clickBad()}
-    //     >Bad</button>
-    //     </li>      
-    // </ul>
-    // )
- 
-};
+ };
 
 export default FeedbackOptions;
 
